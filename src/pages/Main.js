@@ -1,5 +1,5 @@
 import React, {useState, useCallback, useEffect} from "react";
-import {Container, Form, SubmitButton, List, DeleteButton, ErrorMessage} from "../styles/stylesMain";
+import {Container, Form, SubmitButton, List, DeleteButton, ErrorMessage, Footer} from "../styles/stylesMain";
 import {FaGithub, FaPlus, FaSpinner, FaBars, FaTrash} from "react-icons/fa";
 import api from "../services/api";
 import {Link} from "react-router-dom";
@@ -83,7 +83,10 @@ export default function Main(){
         setRepositories(find);    
     }, [repositories]);
 
+    const year = new Date().getFullYear();
+
     return (
+        <>
         <Container>
             <h1>
                 <FaGithub size={25} />
@@ -120,9 +123,11 @@ export default function Main(){
                         </Link>
                     </li>
                 ))}
-
             </List>
-
         </Container>
+        <Footer>
+            <p>VTisbierek © {year}</p>
+        </Footer>
+        </>
     );
 } //preciso usar encodeURIComponent porque o router vai achar que a barra no nome do repo é outra pasta, e vai dizer que esse caminho não existe, usando a função encodeURIComponent a gnt diz pro route que aquilo tudo é uma coisa só

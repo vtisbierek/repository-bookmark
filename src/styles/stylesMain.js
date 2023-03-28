@@ -108,3 +108,12 @@ export const ErrorMessage = styled.p.attrs(props => ({hidden: props.alert,}))`
         display: none;
     }
 `;
+
+export const Footer = styled.div`
+    display: flex;
+    justify-content: center;
+ 
+    p{
+        color: #fff;
+    }
+`;
