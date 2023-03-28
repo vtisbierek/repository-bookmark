@@ -95,7 +95,7 @@ export default function Main(){
             </ErrorMessage>
 
             <Form onSubmit={handleSubmit} alert={alert} >
-                <input type="text" placeholder="Add Repository" value={newRepo} onChange={handleInputChange} />
+                <input type="text" placeholder="Add Repository (example: facebook/react)" value={newRepo} onChange={handleInputChange} />
 
                 <SubmitButton loading={loading ? 1 : 0}>
                     {loading ? (
